@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后台管理</title>
+  <style>
+    .loginout {
+      font-weight: 900;
+      color: red;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .loginout:hover {
+      text-decoration: none;
+      color: green;
+    }
+  </style>
+  <!-- Bootstrap -->
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">欢迎进入后台管理系统</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+              <p class="navbar-text navbar-right" style="font-weight: 700;margin: 10px;">欢迎 【sky】登录
+                <a href="#" class="loginout">退出</a>
+              </p>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+            学生管理
+          </a>
+          <a href="#" class="list-group-item">系统管理</a>
+          <a href="#" class="list-group-item">用户管理</a>
+          <a href="#" class="list-group-item">修改密码</a>
+          <a href="#" class="list-group-item">退出系统</a>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <ol class="breadcrumb" style="margin: 0;padding: 0;">
+              <li>
+                <a href="#">首页</a>
+              </li>
+              <li>
+                <a href="#">学生管理</a>
+              </li>
+              <li class="active">学生列表</li>
+            </ol>
+          </div>
+          <div class="panel-heading">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon">学生姓名</div>
+                  <input type="text" class="form-control" id="searchbar" placeholder="请输入学生姓名进行查询">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success">查找</button>
+              <a href="#" class="btn btn-danger">新增</a>
+            </form>
+          </div>
+          <div class="panel-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>年龄</th>
+                  <th>性别</th>
+                  <th>手机号码</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">产品经理不好当1</th>
+                  <td>1</td>
+                  <td>男</td>
+                  <td>188</td>
+                  <td>
+                    <button class="btn btn-success btn-xs">编辑🍞</button>
+                    <button class="btn btn-danger btn-xs">删除👍</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/bootstrap/js/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
