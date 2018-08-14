@@ -1,5 +1,6 @@
 const express = require('express')
 const managerRouter = require('./route/managerRouter')
+const studentRouter = require('./route/studentRouter')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 let app = express()
@@ -17,6 +18,8 @@ app.use(session({
 }))
 
 app.use('/manager', managerRouter)
+
+app.use('/student', studentRouter)
 
 app.listen(8080, () => {
   console.log('success')

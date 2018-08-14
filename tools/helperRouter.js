@@ -19,7 +19,7 @@ module.exports = {
     })
   },
   insertOne (collectionName, obj, callback) {
-    MongoClient.connect(url, function (err, client) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
       if (err) throw err
       const db = client.db(dbName)
       db.collection(collectionName).insertOne(obj, (err, results) => {
