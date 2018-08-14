@@ -75,13 +75,14 @@
 <script src="/md5/md5.min.js"></script>
 <script>
   $(function () {
-    $('.vCode').on('click', function () {
-      $(this).attr('src', '/manager/vCode?' + Date.now())
-    })
-
     $('.login').on('click', function () {
       let value = $('#password').val()
       $('#password').val(md5(value, 'keyboard bear'))
     })
+
+    $('.vCode').on('click', function () {
+      $(this).attr('src', '/manager/vCode?' + Date.now())
+    }).trigger()
+    
   })
 </script>

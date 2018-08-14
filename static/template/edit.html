@@ -80,46 +80,48 @@
             </ol>
           </div>
           <div class="panel-body">
-            <form action="/student/insert" method="POST" class="form-horizontal">
+            <form action="/student/edit" method="POST" class="form-horizontal">
+              <input type="hidden" name="_id" value="{{results._id}}">
               <div class="form-group">
                 <label for="userName" class="col-sm-2 control-label">姓名</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="userName" id="userName" placeholder="请输入姓名">
+                  <input type="text" class="form-control" name="userName" value="{{results.userName}}" id="userName" placeholder="请输入姓名">
                 </div>
               </div>
               <div class="form-group">
                 <label for="userAge" class="col-sm-2 control-label">年龄</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="userAge" id="userAge" placeholder="请输入年龄">
+                  <input type="text" class="form-control" name="userAge" value="{{results.userAge}}" id="userAge" placeholder="请输入年龄">
                 </div>
               </div>
               <div class="form-group">
                 <label for="userMale" class="col-sm-2 control-label">性别</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="userMale" id="userMale" placeholder="请输入性别">
+                  <input type="text" class="form-control" name="userMale" value="{{results.userMale}}" id="userMale" placeholder="请输入性别">
                 </div>
               </div>
               <div class="form-group">
                 <label for="userMobile" class="col-sm-2 control-label">电话</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="userMobile" id="userMobile" placeholder="请输入电话">
+                  <input type="text" class="form-control" name="userMobile" value="{{results.userMobile}}" id="userMobile" placeholder="请输入电话">
                 </div>
               </div>
               <div class="form-group">
                 <label for="userAdress" class="col-sm-2 control-label">地址</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" name="userAdress" id="userAdress" placeholder="请输入地址">
+                  <input type="text" class="form-control" name="userAdress" value="{{results.userAdress}}" id="userAdress" placeholder="请输入地址">
                 </div>
               </div>
               <div class="form-group">
                 <label for="userIntro" class="col-sm-2 control-label">简介</label>
                 <div class="col-sm-5">
-                  <textarea type="text" rows="7" style="resize: none;" class="form-control" name="userIntro" id="userIntro" placeholder="请输入简介"></textarea>
+                  <textarea type="text" rows="7" style="resize: none;" class="form-control" name="userIntro" id="userIntro" placeholder="请输入简介">{{results.userIntro}}</textarea>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-default">保存</button>
+                  <a href="/student/index" class="btn btn-danger">取消</a>
                 </div>
               </div>
             </form>

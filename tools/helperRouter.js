@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient
-
+const ObjectId = require('mongodb').ObjectId
 // Connection URL
 const url = 'mongodb://127.0.0.1:27017'
 
@@ -24,11 +24,32 @@ module.exports = {
       const db = client.db(dbName)
       db.collection(collectionName).insertOne(obj, (err, results) => {
         if (err) throw err
-        callback(results)
+        callback(results.result)
+      })
+    })
+  },
+  deleteOne (collectionName, obj, callback) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
+      if (err) throw err
+      const db = client.db(dbName)
+      db.collection(collectionName).deleteOne(obj, (err, results) => {
+        if (err) throw err
+        callback(results.result)
+      })
+    })
+  },
+  updateOne (collectionName, obj, updateobj, callback) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
+      if (err) throw err
+      const db = client.db(dbName)
+      db.collection(collectionName).updateOne(obj, {$set: updateobj}, (err, results) => {
+        if (err) throw err
+        callback(results.result)
       })
     })
   },
   tips (res, str, url) {
     res.send(`<script>alert('${str}');location.href='${url}'</script>`)
-  }
+  },
+  ObjectId
 }
